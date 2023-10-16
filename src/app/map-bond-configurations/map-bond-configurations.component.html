@@ -1,0 +1,28 @@
+<div class="container">
+  <h3>Bond Configurations</h3>
+  <form [formGroup]="profileForm" (ngSubmit)="submit()">
+    <label for="Country">Country:</label>
+    <select id="Country" formControlName="Country" required>
+      <option value="" disabled selected>Select a country</option>
+      <option *ngFor="let country of countries" [value]="country">
+        {{ country }}
+      </option>
+    </select>
+    <table>
+      <tr *ngFor="let item of items; index as i">
+        <td>
+          <input
+            type="radio"
+            [value]="item"
+            name="radioGroup"
+            [(ngModel)]="selectedItem"
+          />
+        </td>
+        <td class="bordered">{{ item.bondConfigurationName }}</td>
+        <td class="bordered">{{ item.country }}</td>
+        <td class="bordered">{{ item.description }}</td>
+        <td class="bordered">{{ item.view }}</td>
+      </tr>
+    </table>
+  </form>
+</div>

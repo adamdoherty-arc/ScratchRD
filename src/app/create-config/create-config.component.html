@@ -1,0 +1,76 @@
+<div class="container">
+    <h3>Create Configuration</h3>
+    <form [formGroup]="profileForm" (ngSubmit)="submit()">
+    
+        <label for="ConfigurationName">Configuration Name:</label>
+        <input id="ConfigurationName" type="text" formControlName="ConfigurationName" placeholder="Enter Configuration Name">
+        
+        <label for="ObligeeName">Obligee Name:</label>
+        <input id="ObligeeName" type="text" formControlName="ObligeeName" required placeholder="hint">
+        
+        <label for="Country">Country:</label>
+        <select id="Country" formControlName="Country" required>
+            <option value="" disabled selected>Select a country</option>
+          <option *ngFor="let country of countries trackBy: trackByFn" [value]="country" >{{ country }}</option>
+        </select>
+        <!--
+        <mat-form-field appearance="fill">
+            <mat-label>Country</mat-label>
+            <mat-select id="Country" formControlName="Country" required>
+              <mat-option *ngFor="let country of countries" [value]="country">{{ country }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="fieldsArray.controls[2].invalid && (fieldsArray.controls[2].dirty || fieldsArray.controls[2].touched)">
+                This field is required.
+              </mat-error>
+          </mat-form-field>
+          -->
+        <div class="row">
+            <div class="col">
+                <label for="ObligeeLocation">Obligee Location:</label>
+                <select id="ObligeeLocation" formControlName="ObligeeLocation" required>
+                    <option value="" disabled selected>hint</option>
+                    <option *ngFor="let obligeeLocation of obligeeLocations" [value]="obligeeLocation">{{ obligeeLocation }}</option>
+                </select>
+            </div>
+            <div class="col middleField">
+                <label for="Class">Class:</label>
+                <select id="Class" formControlName="Class" required>
+                    <option *ngFor="let class of classes" [value]="class">{{ class }}</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <label for="Category">Category:</label>
+                <select id="Category" formControlName="Category" required>
+                    <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+                </select>
+            </div>
+            <div class="col middleField">
+                <label for="BondType">BondType:</label>
+                <select id="BondType" formControlName="BondType" required>
+                    <option *ngFor="let bondType of bondTypes" [value]="bondType">{{ bondType }}</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <label for="BondAmount">Bond Amount:</label>
+                <select id="BondAmount" formControlName="BondAmount" required>
+                    <option *ngFor="let bondAmount of bondAmounts" [value]="bondAmount">{{ bondAmount }}</option>
+                </select>
+            </div>
+            <div class="col middleField">
+                <label for="CancellationProvision">Cancellation Provision:</label>
+                <select class=".input-right" id="CancellationProvision" formControlName="CancellationProvision" required>
+                    <option *ngFor="let cancellationProvision of cancellationProvisions" [value]="cancellationProvision">{{ cancellationProvision }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="clearfix">
+            <button type="submit">Save Configuration</button>
+        </div>
+    </form>
+</div>

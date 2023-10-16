@@ -1,0 +1,42 @@
+<div class="container">
+    <h3>Rules Dashboard</h3>
+  
+    <form [formGroup]="rulesForm" (ngSubmit)="submit()">
+      <label for="RuleName">Rule Name:</label>
+      <input id="RuleName" type="text" formControlName="RuleName" required>
+  
+      <label for="RuleAction">Rule Action:</label>
+      <input id="RuleAction" type="text" formControlName="RuleAction" required>
+  
+      <label for="RuleDescription">Rule Description:</label>
+      <textarea id="RuleDescription" formControlName="RuleDescription" required></textarea>
+  
+      <label for="BondType">Bond Type:</label>
+      <input id="BondType" type="text" formControlName="BondType" required>
+  
+      <label for="BondCategory">Bond Category:</label>
+      <input id="BondCategory" type="text" formControlName="BondCategory" required>
+  
+      <label for="BondClassification">Bond Classification:</label>
+      <input id="BondClassification" type="text" formControlName="BondClassification" required>
+  
+      <label for="BondAmount">Bond Amount:</label>
+      <input id="BondAmount" type="text" formControlName="BondAmount" required>
+  
+      <label for="CancellationProvision">Cancellation Provision:</label>
+      <input id="CancellationProvision" type="text" formControlName="CancellationProvision" required>
+  
+      <label for="RuleStatus">Rule Status:</label>
+      <input id="RuleStatus" type="text" formControlName="RuleStatus" required>
+  
+      <label for="EffectiveDate">Effective Date:</label>
+      <input id="EffectiveDate" type="date" formControlName="EffectiveDate" required>
+  
+      <label for="ExpiryDate">Expiry Date:</label>
+      <input id="ExpiryDate" type="date" formControlName="ExpiryDate" required>
+  
+      <button type="submit">Submit</button>
+  
+    </form>
+  </div>
+  
